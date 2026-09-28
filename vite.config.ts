@@ -3,8 +3,11 @@ import react from '@vitejs/plugin-react';
 import path from 'path';
 import {defineConfig} from 'vite';
 
-export default defineConfig(() => {
+
+export default defineConfig(({mode}) => {
   return {
+    // GitHub project Pages serves this app under /WUClub/.
+    base: mode === 'pages' ? '/WUClub/' : '/',
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
@@ -20,3 +23,4 @@ export default defineConfig(() => {
     },
   };
 });
+
