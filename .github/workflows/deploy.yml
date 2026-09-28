@@ -29,8 +29,8 @@ jobs:
       - name: Install dependencies
         run: bun install
 
-      - name: Build project
-        run: bun run build
+      - name: Build static site for GitHub Pages
+        run: bunx vite build --mode pages
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
